@@ -11,8 +11,8 @@ backend:
 media_folder: 'public/assets/img/uploads'
 show_preview_links: false
 
-site_url: https://flyfigfarm.com
-logo_url: https://flyfigfarm.com/assets/img/logo.svg
+site_url: https://flyingfigfarm.com
+logo_url: https://flyingfigfarm.com/assets/img/logo.png
 
 collections:
   - name: 'plants'
