@@ -1,0 +1,24 @@
+{
+	"name": "flyingfigfarm",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts",
+			"pnpmVersion": "latest",
+			"nvmVersion": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bradlc.vscode-tailwindcss"
+			],
+			"settings": {
+				"files.associations": {
+					"*.css": "tailwindcss",
+					"*.scss": "tailwindcss"
+				}
+			}
+		}
+	}
+}

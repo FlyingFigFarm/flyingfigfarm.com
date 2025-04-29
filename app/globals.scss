@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --backgroundColor: #ffffff;
+  --bodyFont: "Lato", sans-serif;  
+  --bodyColor: #000000;
+  --headerFont: "Poetsen One", sans-serif;
+  --headerColor: #34495e;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.font-header {
+  font-family: var(--headerFont);
+}
+
+body {
+  background: var(--backgroundColor);
+  color: var(--bodyColor);
+  font-family: var(--bodyFont);
+  line-height: 1.7em;
+  font-size: 16px;
+
+  h1, h2, h3, h4, h5, h6, label {
+    font-family: var(--headerFont);
+    font-style: normal;
+  
+    color: var(--headerColor);
+  }
+  
+  .title {
+    font-family: var(--headerFont);
+    font-weight: 400;
+    font-style: normal;
+  
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+}

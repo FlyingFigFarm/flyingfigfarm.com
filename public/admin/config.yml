@@ -1,0 +1,193 @@
+#local_backend: true
+
+#backend:
+#  name: git-gateway
+
+backend:
+  name: github
+  repo: flyingfigfarm/flyingfigfarm.com
+  branch: main
+
+media_folder: 'public/assets/img/uploads'
+show_preview_links: false
+
+site_url: https://flyfigfarm.com
+logo_url: https://flyfigfarm.com/assets/img/logo.svg
+
+collections:
+  - name: 'plants'
+    label: 'Plants'
+    label_singular: 'Plant'
+    editor:
+      preview: false
+    folder: 'content/plants'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{commonName}}'
+    identifier_field: 'commonName'
+    fields:
+      - {
+        label: 'Common Name',
+        name: 'commonName',
+        widget: 'string'
+      }
+      - {
+        label: 'Latin Name',
+        name: 'latinName',
+        widget: 'string'
+      }
+      - {
+        label: 'Tags',
+        label_singular: 'Tag',
+        name: 'tags',
+        widget: 'list',
+        min: 1,
+        summary: '{{fields.tag}}',
+        field: {
+          label: 'Tag',
+          name: tag,
+          widget: select,
+          options: ['Native', 'Edible']
+        }
+      }
+      - {
+        label: '4 Inch',
+        name: 'size4inch',
+        widget: 'boolean',
+        required: false
+      }
+      - {
+        label: '1 Gallon',
+        name: 'size1gallon',
+        widget: 'boolean',
+        required: false
+      }
+      - {
+        label: '3 Gallon',
+        name: 'size3gallon',
+        widget: 'boolean',
+        required: false
+      }
+      - {
+        label: '5 Gallon',
+        name: 'size5gallon',
+        widget: 'boolean',
+        required: false
+      }
+      - {
+        label: 'Light Conditions',
+        label_singular: 'Light Condition',
+        name: 'lightConditions',
+        widget: 'list',
+        min: 1,
+        summary: '{{fields.lightCondition}}',
+        field: {
+          label: 'Light Condition',
+          name: lightCondition,
+          widget: select, 
+          options: ['Sun', 'Partial Sun', 'Shade', 'Partial Shade']
+        }
+      }
+      - {
+        label: 'Water Conditions',
+        label_singular: 'Water Condition',
+        name: 'waterConditions',
+        widget: 'list',
+        min: 1,
+        summary: '{{fields.waterCondition}}',
+        field: {
+          label: 'Water Condition',
+          name: waterCondition,
+          widget: select, 
+          options: ['Wet', 'Medium', 'Dry', 'Moist']
+        }
+      }
+      - {
+        label: 'Height',
+        name: 'height',
+        widget: 'string',
+        required: false
+      }
+      - {
+        label: 'Bloom',
+        name: 'bloom',
+        widget: 'string',
+        required: false
+      }
+      - {
+        label: 'Benefits',
+        name: 'benefits',
+        widget: 'string',
+        required: false
+      }
+      - {
+        label: 'More Info',
+        name: 'link',
+        widget: 'string',
+        required: false
+      }
+      - {
+        label: 'Visible',
+        name: 'visible',
+        widget: 'boolean',
+        default: true
+      }
+  - label: "Pages"
+    name: "home"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - {
+            label: 'Welcome Image',
+            name: 'welcomeImage',
+            widget: 'image',
+            allow_multiple: false,
+            choose_url: false
+          }
+          - {
+            label: 'Native Plants Image',
+            name: 'nativePlantsImage',
+            widget: 'image',
+            allow_multiple: false,
+            choose_url: false
+          }
+          - {
+            label: 'Edible Plants Image',
+            name: 'ediblePlantsImage',
+            widget: 'image',
+            allow_multiple: false,
+            choose_url: false
+          }
+          - {
+            label: 'Pond Plants Image',
+            name: 'pondPlantsImage',
+            widget: 'image',
+            allow_multiple: false,
+            choose_url: false
+          }
+          - {
+            label: 'Contact Email',
+            name: 'contactEmail',
+            widget: 'string'
+          }
+          - {
+            label: 'Facebook Label',
+            name: 'facebookLabel',
+            widget: 'string',
+            required: false
+          }
+          - {
+            label: 'Facebook Link',
+            name: 'facebookLink',
+            widget: 'string',
+            required: false
+          }
+          - {
+            label: 'Welcome Text',
+            name: 'welcomeText',
+            widget: 'text'
+          }
